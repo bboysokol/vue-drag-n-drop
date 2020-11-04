@@ -1,0 +1,91 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Montserrat',
+		sans-serif;
+	background: #dfdfdf;
+
+	.question-card {
+		width: 600px;
+		height: 400px;
+		background: #f4f4f4;
+		position: relative;
+		// display: flex;
+		// justify-content: center;
+		// align-items: center;
+
+		&-body {
+			display: grid;
+
+			.leftSide {
+				grid-column: 1/2;
+				grid-row: auto;
+				-ms-grid-column: 1;
+				display: flex;
+				margin: 10px;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.rightSide {
+				grid-column: 2/3;
+				grid-row: 1;
+				-ms-grid-column: 2;
+				display: flex;
+				margin: 10px;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.card {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 50px;
+				width: 200px;
+				background: grey;
+				border-radius: 7px;
+				position: relative;
+			}
+
+			.draggedItem {
+				background: rgba(255, 209, 65, 1) !important;
+				box-shadow: 0 0 1em black !important;
+				position: fixed !important;
+				pointer-events: none;
+
+
+				z-index: 10;
+			}
+
+			.board {
+				.dragArea {
+					background-color: rgba(lighten(#ffd141, $amount: 20), 0.5);
+					color: rgba(2c, 2c, 2c, 0.5);
+
+					&:hover {
+						background-color: rgba(#ffd141, 0.8);
+						cursor: auto;
+					}
+
+					border-radius: 7px !important;
+				}
+
+				.rowDisabled {
+					background-color: #cccccc;
+
+					.text-container {
+						visibility: hidden;
+					}
+
+					border-radius: 7px;
+				}
+			}
+
+
+		}
+	}
+}
